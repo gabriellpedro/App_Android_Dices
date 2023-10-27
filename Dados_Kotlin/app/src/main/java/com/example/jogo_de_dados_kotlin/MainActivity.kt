@@ -1,5 +1,6 @@
 package com.example.jogo_de_dados_kotlin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -14,21 +15,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    fun Sorteiodado(view: View){
-        val Dado = findViewById<ImageView>(R.id.Dado)
-        val Botao = findViewById<Button>(R.id.Botao)
-        val ListaImagens = listOf(
-            R.drawable.dado_1,
-            R.drawable.dado_2,
-            R.drawable.dado_3,
-            R.drawable.dado_4,
-            R.drawable.dado_5,
-            R.drawable.dado_6
-        )
+    fun Segunda_Tela(view: View){
 
-        Botao.setOnClickListener{
-            var NumeroRandom = Random.nextInt(0,5)
-            Dado.setImageResource(ListaImagens[NumeroRandom])
+        val Botao_Segunda_Tela = findViewById<Button>(R.id.Botao)
+
+        Botao_Segunda_Tela.setOnClickListener{
+            val intent = Intent(this, Sorteio::class.java)
+            startActivity(intent)
         }
 
     }
